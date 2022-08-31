@@ -6,14 +6,20 @@ This plugin will display a broadcast to a player when attacked by their team
   **IsEnabled**
   
    Enable or disable the plugin.
+   
    Type: boolean
+   
    Default: true
+
 
   **ShowTarget**
   
    Sets if the target player gets a message when getting shot by a teammate.
+   
    Type: boolean
+   
    Default: true
+
 
   **ShowShooter**
   
