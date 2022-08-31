@@ -25,7 +25,7 @@ This plugin will display a broadcast to a player when attacked by their team
 
   ## **ShowClassD**
   
-   Sets if class-D gets a message when sooting antoher class-D.
+   Sets if class-D gets a message when sooting another class-D.
    Type: boolean
    Default: false
 
