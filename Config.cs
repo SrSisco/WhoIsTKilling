@@ -19,7 +19,7 @@ public class Config : IConfig
     public bool ShowClassD { get; set; } = false;
 
     [Description("Sets how long the message will be displayed.")]
-    public int BroadcastTime { get; set; }
+    public int BroadcastTime { get; set; } = 5;
 
     [Description("Sets in which language will the messages will be displayed (only spanish or inglish: es en).")]
     public string lang { get; set; } = "en";
