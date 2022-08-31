@@ -2,9 +2,11 @@
 This plugin will display a broadcast to a player when attacked by their team
 
 # Configs
-
-    [Description("Enable or disable the plugin."
-    public bool IsEnabled { get; set; } = true;
+        
+    **IsEnabled**
+    Enable or disable the plugin.
+    Type: boolean
+    Default: true
 
     **ShowTarget**
     Sets if the target player gets a message when getting shot by a teammate.
