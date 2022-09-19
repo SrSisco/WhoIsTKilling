@@ -36,7 +36,7 @@ This plugin will display a broadcast to a player when attacked by their team
   ## **TargetBc**
    Custom broadcast for the target.
    Type: String
-   Default: Your teammate <b><color=red>{attackername}</color></b> has attacked you.
+   Default: ``Your teammate <b><color=red>{attackername}</color></b> has attacked you.``
    
   ## **AttackerBc**
    Custom broadcast for the attacker.
@@ -51,4 +51,4 @@ This plugin will display a broadcast to a player when attacked by their team
   ## **FlashTargetBc**
    Custom broadcast for the flashbang (attacker).
    Type: String
-   Default: You have blinded your teammate(s).
+   Default: ``You have blinded your teammate(s).``
