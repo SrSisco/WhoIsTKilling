@@ -18,6 +18,11 @@ This plugin will display a broadcast to a player when attacked by their team
    Type: boolean
    Default: true
 
+  ## **FlashGrenadeNotify**
+   Sets if teammates get a broadcast when blinded by their team.
+   Type: boolean
+   Default: true
+   
   ## **ShowClassD**
    Sets if class-D gets a message when shooting another class-D.
    Type: boolean
@@ -28,7 +33,22 @@ This plugin will display a broadcast to a player when attacked by their team
    Type: integer
    Default: 5
 
-  ## **lang**
-   Sets in which language will the messages will be displayed (only spanish or english: es en).
+  ## **TargetBc**
+   Custom broadcast for the target.
    Type: String
-   Default: en
+   Default: Your teammate <b><color=red>{attackername}</color></b> has attacked you.
+   
+  ## **AttackerBc**
+   Custom broadcast for the attacker.
+   Type: String
+   Default: You are attacking your teammate <b><color=red>{targetname}</color></b>.
+   
+   ## **FlashAttackerBc**
+   Custom broadcast for the flashbang (target).
+   Type: String
+   Default: Your teammate <b><color=red>{throwername}</color></b> blinded you..
+   
+  ## **FlashTargetBc**
+   Custom broadcast for the flashbang (attacker).
+   Type: String
+   Default: You have blinded your teammate(s).
