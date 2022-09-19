@@ -23,15 +23,15 @@ public class Config : IConfig
     [Description("Sets how long the message will be displayed.")]
     public ushort BroadcastTime { get; set; } = 5;
 
-    [Description("Sets in which language will the messages will be displayed (only spanish or english: es en).")]
+    [Description("Custom broadcast for the target.")]
     public string TargetBc { get; set; } = "Your teammate <b><color=red>{attackername}</color></b> has attacked you.";
 
     [Description("Custom broadcast for the attacker.")]
-    public string AttackerBc { get; set; } = "You are attacking your teammate <b><color=red>{targetname}</color></b> ";
+    public string AttackerBc { get; set; } = "You are attacking your teammate <b><color=red>{targetname}</color></b>.";
 
     [Description("Custom broadcast for the flashbang (attacker).")]
-    public string FlashAttackerBc { get; set; } = "You have blinded your teammate(s)";
+    public string FlashAttackerBc { get; set; } = "You have blinded your teammate(s).";
 
     [Description("Custom broadcast for the flashbang (target).")]
-    public string FlashTargetBc { get; set; } = "<b><color=red>{throwername}</color></b> blinded you";
+    public string FlashTargetBc { get; set; } = "Your teammate<b><color=red>{throwername}</color></b> blinded you.";
 }
