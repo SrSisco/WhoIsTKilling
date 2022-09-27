@@ -1,6 +1,6 @@
 # WhoIsTKilling
-![downloads]
-(https://img.shields.io/github/downloads/SrSisco/WhoIsTKilling/total?style=for-the-badge)
+
+![downloads](https://img.shields.io/github/downloads/SrSisco/WhoIsTKilling/total?style=for-the-badge)
 This plugin will display a broadcast to a player when attacked by their team
 
 # Configs
