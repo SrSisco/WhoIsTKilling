@@ -1,10 +1,11 @@
-﻿using Exiled.API.Features;
+using Exiled.API.Features;
 using Exiled.API.Interfaces;
 using Exiled.Events.EventArgs;
 using System.ComponentModel;
 
 public class Config : IConfig
 {
+    public bool Debug { get; set; } = false;
     [Description("Enable or disable the plugin.")]
     public bool IsEnabled { get; set; } = true;
 
