@@ -5,7 +5,7 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{C862A672-3F77-452A-86A8-FC46E3B87D22}</ProjectGuid>
+        <ProjectGuid>{BA432045-3F13-49AE-B7A7-696C5D919B5E}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>WhoIsTKilling</RootNamespace>

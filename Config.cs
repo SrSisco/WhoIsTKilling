@@ -22,7 +22,7 @@ public class Config : IConfig
     public bool FlashGrenadeNotify { get; set; } = true;
 
     [Description("Sets how long the message will be displayed.")]
-    public ushort BroadcastTime { get; set; } = 5;
+    public ushort NotificationTime { get; set; } = 5;
 
     [Description("Custom broadcast for the target.")]
     public string TargetBc { get; set; } = "Your teammate <b><color=red>{attackername}</color></b> has attacked you.";
@@ -35,4 +35,7 @@ public class Config : IConfig
 
     [Description("Custom broadcast for the flashbang (target).")]
     public string FlashTargetBc { get; set; } = "Your teammate<b><color=red>{throwername}</color></b> blinded you.";
+
+    [Description("How the TK notification is done (Broadcast, Hint, Console)")]
+    public string NotificationMode { get; set; } = "Broadcast";
 }

@@ -36,13 +36,36 @@ namespace WhoIsTKilling
 
                 if (plugin.Config.ShowTarget == true)
                 {
-                    ev.Player.Broadcast(plugin.Config.BroadcastTime, plugin.Config.TargetBc);
+                    switch (plugin.Config.NotificationMode)
+                    {
+                        case ("Broadcast"):
+                            ev.Player.Broadcast(plugin.Config.NotificationTime, plugin.Config.TargetBc);
+                            break;
+                        case ("Hint"):
+                            ev.Player.ShowHint(plugin.Config.TargetBc, plugin.Config.NotificationTime);
+                            break;
+                        case ("Console"):
+                            ev.Player.SendConsoleMessage(plugin.Config.TargetBc, "yellow");
+                            break;
+                    }
+                    
 
                 }
 
                 if (plugin.Config.ShowShooter == true)
                 {
-                    ev.Player.Broadcast(plugin.Config.BroadcastTime, plugin.Config.TargetBc);
+                    switch (plugin.Config.NotificationMode)
+                    {
+                        case ("Broadcast"):
+                            ev.Player.Broadcast(plugin.Config.NotificationTime, plugin.Config.AttackerBc);
+                            break;
+                        case ("Hint"):
+                            ev.Player.ShowHint(plugin.Config.AttackerBc, plugin.Config.NotificationTime);
+                            break;
+                        case ("Console"):
+                            ev.Player.SendConsoleMessage(plugin.Config.AttackerBc, "yellow");
+                            break;
+                    }
                 }
 
             }
@@ -61,9 +84,31 @@ namespace WhoIsTKilling
 
             foreach (Exiled.API.Features.Player player in ev.TargetsToAffect)
             {
-                player.Broadcast(plugin.Config.BroadcastTime, plugin.Config.FlashTargetBc); 
+                switch (plugin.Config.NotificationMode)
+                {
+                    case ("Broadcast"):
+                        ev.Player.Broadcast(plugin.Config.NotificationTime, plugin.Config.FlashTargetBc);
+                        break;
+                    case ("Hint"):
+                        ev.Player.ShowHint(plugin.Config.FlashTargetBc, plugin.Config.NotificationTime);
+                        break;
+                    case ("Console"):
+                        ev.Player.SendConsoleMessage(plugin.Config.FlashTargetBc, "yellow");
+                        break;
+                }
             }
-            ev.Player.Broadcast(plugin.Config.BroadcastTime, plugin.Config.FlashAttackerBc);  
+            switch (plugin.Config.NotificationMode)
+            {
+                case ("Broadcast"):
+                    ev.Player.Broadcast(plugin.Config.NotificationTime, plugin.Config.FlashAttackerBc);
+                    break;
+                case ("Hint"):
+                    ev.Player.ShowHint(plugin.Config.FlashAttackerBc, plugin.Config.NotificationTime);
+                    break;
+                case ("Console"):
+                    ev.Player.SendConsoleMessage(plugin.Config.FlashAttackerBc, "yellow");
+                    break;
+            } 
         }
     }
 }
