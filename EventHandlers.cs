@@ -36,16 +36,17 @@ namespace WhoIsTKilling
 
                 if (plugin.Config.ShowTarget == true)
                 {
+                    var msg = plugin.Config.TargetBc.Replace("{attackername}", ev.Attacker.Nickname);
                     switch (plugin.Config.NotificationMode)
                     {
                         case ("Broadcast"):
-                            ev.Player.Broadcast(plugin.Config.NotificationTime, plugin.Config.TargetBc);
+                            ev.Player.Broadcast(plugin.Config.NotificationTime, msg);
                             break;
                         case ("Hint"):
-                            ev.Player.ShowHint(plugin.Config.TargetBc, plugin.Config.NotificationTime);
+                            ev.Player.ShowHint(msg, plugin.Config.NotificationTime);
                             break;
                         case ("Console"):
-                            ev.Player.SendConsoleMessage(plugin.Config.TargetBc, "yellow");
+                            ev.Player.SendConsoleMessage(msg, "yellow");
                             break;
                     }
                     
@@ -54,16 +55,17 @@ namespace WhoIsTKilling
 
                 if (plugin.Config.ShowShooter == true)
                 {
+                    var msg = plugin.Config.AttackerBc.Replace("{targetname}", ev.Player.Nickname);
                     switch (plugin.Config.NotificationMode)
                     {
                         case ("Broadcast"):
-                            ev.Player.Broadcast(plugin.Config.NotificationTime, plugin.Config.AttackerBc);
+                            ev.Player.Broadcast(plugin.Config.NotificationTime, msg);
                             break;
                         case ("Hint"):
-                            ev.Player.ShowHint(plugin.Config.AttackerBc, plugin.Config.NotificationTime);
+                            ev.Player.ShowHint(msg, plugin.Config.NotificationTime);
                             break;
                         case ("Console"):
-                            ev.Player.SendConsoleMessage(plugin.Config.AttackerBc, "yellow");
+                            ev.Player.SendConsoleMessage(msg, "yellow");
                             break;
                     }
                 }
@@ -78,22 +80,23 @@ namespace WhoIsTKilling
         }
         internal void OnExplodingGrenade(ExplodingGrenadeEventArgs ev)
         {
+            if(ev.Player is null || ev.TargetsToAffect is null) return;
             throwername = ev.Player.Nickname;
             if (!plugin.Config.FlashGrenadeNotify) return;
             if (ev.Projectile.ProjectileType != ProjectileType.Flashbang) return;
-
+            var msg = plugin.Config.FlashTargetBc.Replace("{throwername}", ev.Player.Nickname);
             foreach (Exiled.API.Features.Player player in ev.TargetsToAffect)
             {
                 switch (plugin.Config.NotificationMode)
                 {
                     case ("Broadcast"):
-                        ev.Player.Broadcast(plugin.Config.NotificationTime, plugin.Config.FlashTargetBc);
+                        ev.Player.Broadcast(plugin.Config.NotificationTime, msg);
                         break;
                     case ("Hint"):
-                        ev.Player.ShowHint(plugin.Config.FlashTargetBc, plugin.Config.NotificationTime);
+                        ev.Player.ShowHint(msg, plugin.Config.NotificationTime);
                         break;
                     case ("Console"):
-                        ev.Player.SendConsoleMessage(plugin.Config.FlashTargetBc, "yellow");
+                        ev.Player.SendConsoleMessage(msg, "yellow");
                         break;
                 }
             }
