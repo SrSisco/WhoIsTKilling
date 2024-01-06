@@ -24,12 +24,14 @@ namespace WhoIsTKilling
 
         internal void OnHurting(HurtingEventArgs ev)
         {
-            attackername = ev.Attacker.Nickname;
-            targetname = ev.Player.Nickname;
-          
             if (ev.Player is null || ev.Attacker is null) return;
             if (ev.Attacker.Role == RoleTypeId.ClassD && ev.Player.Role == RoleTypeId.ClassD) return;
             if (ev.Attacker == ev.Player) return;
+            attackername = ev.Attacker.Nickname;
+            targetname = ev.Player.Nickname;
+          
+            
+
 
             if (ev.Attacker.LeadingTeam == ev.Player.LeadingTeam)
             {
