@@ -10,7 +10,7 @@ namespace WhoIsTKilling
         private EventHandlers EventHandler;
         public override string Name => "WhoIsTKilling";
         public override string Author => "SrSisco";
-        public override Version Version  => new Version(1, 2, 0);
+        public override Version Version  => new Version(1, 4, 0);
         public override Version RequiredExiledVersion => new Version(8,9,6);
 
         public override void OnEnabled()
